@@ -1,96 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 42 44% 96%;
+    --foreground: 218 42% 10%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 42 38% 99%;
+    --card-foreground: 218 42% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 42 38% 99%;
+    --popover-foreground: 218 42% 10%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 154 85% 25%;
+    --primary-foreground: 44 57% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 205 92% 18%;
+    --secondary-foreground: 44 57% 96%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 43 28% 90%;
+    --muted-foreground: 216 18% 37%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 95% 54%;
+    --accent-foreground: 218 42% 10%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 76% 52%;
+    --destructive-foreground: 44 57% 96%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 43 23% 82%;
+    --input: 43 23% 82%;
+    --ring: 154 85% 25%;
 
-    --radius: 0.5rem;
+    --live: 176 67% 35%;
+    --live-foreground: 44 57% 96%;
+    --prize: 205 92% 18%;
+    --prize-foreground: 44 57% 96%;
+    --panel: 42 38% 98%;
+    --device: 205 92% 18%;
 
-    --sidebar-background: 0 0% 98%;
+    --gradient-hero: radial-gradient(circle at 15% 18%, hsl(45 95% 54% / 0.32), transparent 26%), radial-gradient(circle at 86% 24%, hsl(176 67% 35% / 0.24), transparent 30%), linear-gradient(135deg, hsl(42 44% 96%), hsl(162 33% 91%));
+    --gradient-route: linear-gradient(90deg, hsl(154 85% 25%), hsl(45 95% 54%), hsl(176 67% 35%));
+    --gradient-prize: linear-gradient(135deg, hsl(205 92% 18%), hsl(154 85% 25%));
+    --map-pattern: radial-gradient(circle at 20% 20%, hsl(45 95% 54% / 0.18), transparent 18%), linear-gradient(120deg, hsl(162 33% 91%), hsl(42 38% 99%));
+    --shadow-soft: 0 18px 50px -30px hsl(218 42% 10% / 0.35);
+    --shadow-glow: 0 18px 50px -28px hsl(154 85% 25% / 0.75);
+    --shadow-deep: 0 30px 90px -38px hsl(218 42% 10% / 0.55);
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --radius: 0.85rem;
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 42 38% 99%;
+    --sidebar-foreground: 218 42% 10%;
+    --sidebar-primary: 154 85% 25%;
+    --sidebar-primary-foreground: 44 57% 96%;
+    --sidebar-accent: 43 28% 90%;
+    --sidebar-accent-foreground: 218 42% 10%;
+    --sidebar-border: 43 23% 82%;
+    --sidebar-ring: 154 85% 25%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 218 42% 10%;
+    --foreground: 44 57% 96%;
+    --card: 217 36% 14%;
+    --card-foreground: 44 57% 96%;
+    --popover: 217 36% 14%;
+    --popover-foreground: 44 57% 96%;
+    --primary: 154 72% 45%;
+    --primary-foreground: 218 42% 10%;
+    --secondary: 205 80% 24%;
+    --secondary-foreground: 44 57% 96%;
+    --muted: 217 27% 20%;
+    --muted-foreground: 43 22% 73%;
+    --accent: 45 95% 54%;
+    --accent-foreground: 218 42% 10%;
+    --destructive: 0 76% 52%;
+    --destructive-foreground: 44 57% 96%;
+    --border: 217 23% 25%;
+    --input: 217 23% 25%;
+    --ring: 154 72% 45%;
+    --live: 176 67% 42%;
+    --live-foreground: 218 42% 10%;
+    --prize: 205 80% 24%;
+    --prize-foreground: 44 57% 96%;
+    --panel: 217 36% 14%;
+    --device: 218 42% 8%;
+    --gradient-hero: radial-gradient(circle at 15% 18%, hsl(45 95% 54% / 0.16), transparent 26%), radial-gradient(circle at 86% 24%, hsl(176 67% 42% / 0.18), transparent 30%), linear-gradient(135deg, hsl(218 42% 10%), hsl(205 80% 13%));
+    --gradient-route: linear-gradient(90deg, hsl(154 72% 45%), hsl(45 95% 54%), hsl(176 67% 42%));
+    --gradient-prize: linear-gradient(135deg, hsl(205 80% 24%), hsl(154 72% 32%));
+    --map-pattern: radial-gradient(circle at 20% 20%, hsl(45 95% 54% / 0.15), transparent 18%), linear-gradient(120deg, hsl(217 27% 20%), hsl(217 36% 14%));
+    --sidebar-background: 217 36% 14%;
+    --sidebar-foreground: 44 57% 96%;
+    --sidebar-primary: 154 72% 45%;
+    --sidebar-primary-foreground: 218 42% 10%;
+    --sidebar-accent: 217 27% 20%;
+    --sidebar-accent-foreground: 44 57% 96%;
+    --sidebar-border: 217 23% 25%;
+    --sidebar-ring: 154 72% 45%;
   }
 }
 
@@ -99,7 +107,25 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: theme('fontFamily.body');
+  }
+
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
